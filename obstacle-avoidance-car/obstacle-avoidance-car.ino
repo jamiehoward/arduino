@@ -113,14 +113,14 @@ void loop()
 {
   setAngle();
   myservo.write(angle);
-  delay(50);
-  _forward(5);
   distance = Distance_test();
   
   if (distance <= 35) {
     _stop(500);
     _back(250);
     _right(0.125); // Turn around
+  } else {
+    _forward(5);
   }
 }
 
